@@ -1,0 +1,27 @@
+ALGORITHM AllocateSlot(vehicleNo)
+    FOR each floor f
+        FOR each slot s on floor f
+            IF slot[f][s] is empty
+                slot[f][s] = vehicleNo
+                RETURN (f, s)
+            END IF
+        END FOR
+    END FOR
+    RETURN NO_SLOT_AVAILABLE
+END ALGORITHM  
+
+
+ALGORITHM CalculateFee(minutes, hourlyRate)
+    IF minutes < 0
+        RETURN INVALID_DURATION
+    END IF
+
+    hours = minutes DIV 60
+
+    IF minutes MOD 60 != 0
+        hours = hours + 1
+    END IF
+
+    fee = hours * hourlyRate
+    RETURN fee
+END ALGORITHM
